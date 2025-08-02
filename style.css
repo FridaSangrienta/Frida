@@ -1,0 +1,297 @@
+/* -------------------------------
+   IMPORTS / BASE
+------------------------------- */
+
+/* Import de la police The Seasons */
+@import url('https://fonts.googleapis.com/css2?family=The+Seasons&display=swap');
+
+/* (Exemple de reset si besoin)
+body {
+  margin: 0;
+  padding: 0;
+}
+*/
+
+/* -------------------------------
+   PAGE DE GARDE : ".cover"
+------------------------------- */
+.cover {
+    background-image: url('../images/Fond-frida.jpg'); /* Chemin vers l'image */
+    background-size: cover;          /* L'image couvre toute la zone */
+    background-position: center;     /* Centre l'image */
+    background-repeat: no-repeat;    
+    height: 100vh;                   /* Prend toute la hauteur de la page */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-title {
+    font-family: 'The Seasons', serif;
+    font-size: 8rem; 
+    text-align: center;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 10rem; 
+    display: block;
+}
+
+/* -------------------------------
+   SECTION EN DESSOUS (CONTENU)
+------------------------------- */
+.content {
+    padding: 40px;
+    font-family: 'The Seasons', serif;
+    background-color: #E4D6B3;
+    color: #2F2313;
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Image + légende */
+.image-figure {
+    margin: 0;
+    padding-right: 20px;
+}
+
+.image-left {
+    max-width: 300px;
+    height: auto;
+    display: block;
+    border: 1.5px solid #2F2313;
+    border-radius: 5px; 
+}
+
+figcaption {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 5px;
+    color: #2F2313;
+}
+
+/* Paragraphe */
+.paragraph {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: 20px; 
+    margin-right: 20px;
+    text-align: justify;
+}
+
+.signature {
+    display: block; 
+    text-align: right;  
+    margin-top: 10px; 
+}
+
+/* -------------------------------
+   BOUTONS
+------------------------------- */
+/* Bouton rond (Frida) */
+.round-button {
+    position: absolute;
+    top: 20px; 
+    left: 30px; 
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #2F2313;
+    /* Z-index très élevé pour rester au-dessus de l'overlay et du bandeau */
+    z-index: 1000;
+}
+
+.button-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* -------------------------------
+   SIDEBAR (MENU COULISSANT)
+------------------------------- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 25vw; 
+    max-width: 300px; 
+    height: 100vh;
+    background-color: #436360;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease; 
+    /* Z-index en dessous du bouton Frida, 
+       mais au-dessus du fond. */
+    z-index: 999;
+    padding-top: 60px; 
+}
+.sidebar.open {
+    transform: translateX(0);
+}
+.sidebar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center; 
+}
+.sidebar li a {
+    display: block;
+    padding: 15px 20px;
+    color: #2F2313;
+    font-family: 'The Seasons', serif;
+    text-decoration: none;
+    font-size: 1.5rem; 
+}
+.sidebar li a:hover {
+    background-color: #444;
+}
+
+/* -------------------------------
+   OVERLAY
+------------------------------- */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    display: none; 
+    /* Pour être sous le bouton, mais 
+       au-dessus du fond et sous le bouton Frida */
+    z-index: 998;
+}
+.overlay.open {
+    display: block;
+}
+
+/* -------------------------------
+   PAGE DUMB THOUGHTS
+------------------------------- */
+.dumb-thoughts-body {
+    background-color: #E4D6B3; 
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    height: 200vh; /* Ex. plus longue */
+    position: relative;
+}
+.dumb-thoughts-title {
+    text-align: center;
+    font-family: 'The Seasons', serif; 
+    font-size: 3rem;
+    margin: 40px 0;
+    color: #4d1e1e;
+}
+.dumb-thoughts-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-size: 1.1rem;
+    font-family: 'The Seasons', serif;
+    color: #2F2313;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* -------------------------------
+   BANDEAU POUR DUMB THOUGHTS
+------------------------------- */
+
+.dumb-thoughts-banner {
+    height: 16.6667vh;
+    background-image: url('../images/Fond-frida.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.dumb-thoughts-banner .dumb-thoughts-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: #000000;
+    margin: 0;
+}
+
+/* Page Souk : corps, bannière, titre, contenu */
+.souk-body {
+    background-color: #E4D6B3;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh; /* Assure que la page occupe tout l'écran */
+    position: relative;
+}
+
+.souk-banner {
+    height: 16.6667vh; /* Bandeau horizontal */
+    background-image: url('../images/Fond-frida.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.souk-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'The Seasons', serif;
+    font-size: 3rem;
+    color: #2F2313;
+    margin: 0;
+    text-align: center;
+}
+
+.souk-content {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+    text-align: justify; /* Optionnel */
+}
+
+/* Galerie */
+.souk-gallery {
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.gallery-wrapper {
+    display: flex; /* Utilisation de Flexbox */
+    flex-wrap: wrap; /* Les images passent à la ligne si nécessaire */
+    gap: 16px; /* Espacement constant entre les images */
+    justify-content: center; /* Centre les images sur chaque ligne */
+    align-items: flex-start; /* Aligne les images en haut si elles ont des hauteurs différentes */
+}
+
+.souk-gallery figure {
+    margin: 0;
+    text-align: center; /* Centre le contenu du figure */
+    flex: 0 1 calc(33.33% - 16px); /* Environ 3 images par ligne */
+}
+
+.souk-gallery img.souk-img {
+    max-width: 100%; /* L'image occupe toute la largeur de son conteneur */
+    height: auto; /* Conserve les proportions de l'image */
+    max-height: 300px; /* Taille maximale pour réduire les dimensions */
+    object-fit: contain; /* Assure que l'image reste contenue sans déformation */
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto; /* Centre l'image à l'intérieur du conteneur */
+}
