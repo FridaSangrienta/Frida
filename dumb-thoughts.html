@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Dumb Thoughts</title>
+  <!-- Polices et CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=The+Seasons&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dumb-thoughts-body">
+  
+  <!-- Bouton Frida (qui sert aussi de bouton menu) -->
+  <div class="round-button" id="menu-btn">
+    <img src="images/la-vendeuse-d-oranges.jpg" alt="Menu" class="button-image">
+  </div>
+
+  <!-- Menu coulissant (sidebar) -->
+  <div class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dumb-thoughts.html">Dumb Thoughts</a></li>
+      <li><a href="Souk.html">Souk</a></li>
+    </ul>
+  </div>
+
+  <!-- Overlay pour fermer le menu en cliquant à côté -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Bandeau horizontal en haut (1/6 de la hauteur de l'écran) -->
+  <header class="dumb-thoughts-banner">
+    <h1 class="dumb-thoughts-title">Dumb Thoughts</h1>
+  </header>
+
+  <!-- Contenu de la page -->
+  <section class="dumb-thoughts-content">
+    <p>
+      27/12/24<p></p>
+      I have been working on this blog for dayssss…roooh it is taking me so much time. I thought I would quickly make those pages easily, but I am not a coding expert lol. I am looking forward to finish all the HTML stuff so I can post whenever I want.<br>
+      I am thinking of having a homepage, a page called « Dumb Thoughts » that will have notes and a page (I haven’t thought about the name yet) that will be a dump of things that I like.<p></p>
+
+      I am in a café with family, I just drank this avocado juice. I was in a really bad mood today but the juice put a smile on my face. Don’t know when I am going to go back home. Don’t know what I will do when I will be home. Need to see friends, take care of my face and body (I look so ugly these days…)
+      But what I am sure is that I am so grateful to have escaped from the bad weather of where I live. The sun has been my best friend, my lover. Even though it is windy and a little bit cold, it has been a pleasure to be outside this week. I love this country ! What a blessing to be able to come here since I was born.<p></p>
+      ___________________________________________________________________________________________
+      <p></p>
+            
+      24/12/24 </p>
+      Long time no see beautiful princesses !<br>
+      (I actually don’t know who I am talking to lol)
+      I created this blog so I could post often but I got caught up with a massive amount of work. I feel ashamed, I wanted to be consistent but I failed lol….<p>
+      
+      I am on holiday with my family and it is so goooood to finally see the sun ! I forgot that the sky is that high and blue (it is December and it’s always raining where I live) 
+      I am facing the sun on the terrace, I don’t want to leave this place. Can’t stop debating if I should let the sun rays touch my skin : they can damage it. But is it worth it to live its life away from the sun just to have a beautiful skin? Aging is not ugly, I don’t have any problem with having wrinkles. And if I die old with damaged skin, it would have reflected all the beautiful moments that i spend with people I love on trips.<p></p>
+      
+      I am hungry, i hope we will eat good food (we will, food is amazing in this country).
+      
+      I decided to stay under the sun. This weather is too precious to be picky. Almost no clouds, a little bit of fresh wind, I love it!
+    </p>
+  </section>
+
+  <!-- Script : ouvre/ferme le menu via le bouton Frida -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    // Au clic sur le bouton Frida, on ouvre/ferme la sidebar et l’overlay
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+      overlay.classList.toggle('open');
+    });
+
+    // Au clic sur l’overlay, on referme tout
+    overlay.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('open');
+    });
+  </script>
+</body>
+</html>

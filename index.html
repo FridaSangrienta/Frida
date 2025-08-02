@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frida La Sangrienta</title>
+    <!-- Import des polices The Seasons et Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=The+Seasons&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="cover">
+        <!-- Titre principal, chaque mot sur une ligne différente -->
+        <h1 class="main-title">
+            Frida<br>
+            <span class="subtitle">la Sangrienta</span>
+        </h1>
+    </header>
+   
+    <!-- Bouton rond Frida (devient bouton menu) -->
+    <div class="round-button" id="menu-btn">
+        <img src="images/la-vendeuse-d-oranges.jpg" alt="Menu" class="button-image">
+    </div>
+
+    <!-- Menu coulissant -->
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dumb-thoughts.html">Dumb Thoughts</a></li>
+            <li><a href="Souk.html">Souk</a></li>
+        </ul>
+    </div>
+
+    <!-- Overlay pour cliquer à côté et fermer le menu -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Script JavaScript pour gérer l'ouverture/fermeture -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+
+        // Au clic sur le bouton Frida, on ouvre/ferme le menu et l’overlay
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('open');
+        });
+
+        // Au clic sur l’overlay, on referme tout
+        overlay.addEventListener('click', () => {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('open');
+        });
+    </script>
+
+    <section class="content" id="content-section">
+        <div class="content-wrapper">
+            <!-- Image avec légende -->
+            <figure class="image-figure">
+                <img src="images/la-vendeuse-d-oranges.jpg"
+                     alt="La vendeuse d'oranges d'Enrique SERRA Y AUQUE"
+                     class="image-left">
+                <figcaption>Enrique SERRA Y AUQUE, "The Orange Seller"</figcaption>
+            </figure>
+            <!-- Paragraphe à droite de l'image -->
+            <p class="paragraph">
+               <br>
+               <br> 
+               This blog doesn’t make much sense. Will it come to life? Will I succeed in putting words on my thought? In shaping my vision? I have no idea.
+               <br>My goal is to transcribe what I feel: colors, music, sensations, materials…
+               <br>Welcome to my own room, the garden I must cultivate.
+               <br>
+               <br>
+               <span class="signature">-Frida</span>
+            </p>
+        </div>
+    </section>
+</body>
+</html>
